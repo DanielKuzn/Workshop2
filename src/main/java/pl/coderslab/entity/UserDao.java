@@ -71,7 +71,12 @@ public class UserDao {
 //    public User[] findAll() {
 //
 //    }
-//    public void delete(int userId) {
-//
-//    }
+    public void delete(int userId) {
+        try (Connection conn = DbUtil.getConnection(); PreparedStatement preStat = conn.prepareStatement(DELETE_USER_QUERY)) {
+            preStat.setInt(1, userId);
+            preStat.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -40,7 +40,6 @@ public class MainDao {
 //        System.out.println(userToUpdate.getEmail());
 //        System.out.println(userToUpdate.getPassword());
 
-//
 //        userDao.delete(1);
 //        User[] all = userDao.findAll();
 //        for (User u : all) {
