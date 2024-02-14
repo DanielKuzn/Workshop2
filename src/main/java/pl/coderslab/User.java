@@ -1,7 +1,7 @@
 package pl.coderslab;
 
 public class User {
-    private int id = 0;
+    private int id;
     private String userName;
     private String email;
     private String password;
@@ -11,7 +11,14 @@ public class User {
         this.email = email;
         this.password = password;
     }
-
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
     public int getId() {
         return id;
     }

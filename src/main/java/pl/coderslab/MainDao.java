@@ -12,7 +12,7 @@ public class MainDao {
 //        user.setEmail("arkadiusz.jozwiak@coderslab.pl");
 //        user.setPassword("pass");
 //        userDao.create(user);
-//
+
 //        User user1 = new User();
 //        user1.setUserName("jan");
 //        user1.setEmail("jan.kowzl@yahoo.com");
@@ -25,25 +25,25 @@ public class MainDao {
 //        user2.setPassword("contin56rt");
 //        userDao.create(user2);
 
-//        User userToUpdate = userDao.read(1);
-//        System.out.println(userToUpdate.getId());
-//        System.out.println(userToUpdate.getUserName());
-//        System.out.println(userToUpdate.getEmail());
-//        System.out.println(userToUpdate.getPassword());
-//        userToUpdate.setUserName("Arkadiusz");
-//        userToUpdate.setEmail("arek@coderslab.pl");
-//        userToUpdate.setPassword("superPassword");
-//        userDao.update(userToUpdate);
-//        userToUpdate = userDao.read(1);
-//        System.out.println(userToUpdate.getId());
-//        System.out.println(userToUpdate.getUserName());
-//        System.out.println(userToUpdate.getEmail());
-//        System.out.println(userToUpdate.getPassword());
+        User userToUpdate = userDao.read(7);
+        System.out.println(userToUpdate.getId());
+        System.out.println(userToUpdate.getUserName());
+        System.out.println(userToUpdate.getEmail());
+        System.out.println(userToUpdate.getPassword());
+        userToUpdate.setUserName("Arkadiusz");
+        userToUpdate.setEmail("arek@coderslab.pl");
+        userToUpdate.setPassword("superPassword");
+        userDao.update(userToUpdate);
+        userToUpdate = userDao.read(7);
+        System.out.println(userToUpdate.getId());
+        System.out.println(userToUpdate.getUserName());
+        System.out.println(userToUpdate.getEmail());
+        System.out.println(userToUpdate.getPassword());
 
 //        userDao.delete(1);
-//        User[] all = userDao.findAll();
-//        for (User u : all) {
-//            System.out.println(u);
-//        }
+        User[] all = userDao.findAll();
+        for (User u : all) {
+            System.out.println(u);
+        }
     }
 }

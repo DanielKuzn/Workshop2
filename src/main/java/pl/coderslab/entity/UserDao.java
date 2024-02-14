@@ -5,6 +5,7 @@ import pl.coderslab.DbUtil;
 import pl.coderslab.User;
 
 import java.sql.*;
+import java.util.Arrays;
 
 public class UserDao {
     private static final String CREATE_USER_QUERY =
@@ -68,9 +69,29 @@ public class UserDao {
             e.printStackTrace();
         }
     }
-//    public User[] findAll() {
-//
-//    }
+    public User[] findAll() {
+        User[] users = new User[0];
+        try (Connection conn = DbUtil.getConnection(); Statement stat = conn.createStatement(); ResultSet rs = stat.executeQuery(FIND_ALL_QUERY)) {
+            while (rs.next()) {
+                User user = new User();
+                user.setId(rs.getInt(1));
+                user.setEmail(rs.getString(2));
+                user.setUserName(rs.getString(3));
+                user.setPassword(rs.getString(4));
+                users = addToArray(user, users);
+            }
+            return users;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+private User[] addToArray(User u, User[] users) {
+    User[] tmpUsers = Arrays.copyOf(users, users.length + 1); // Tworzymy kopię tablicy powiększoną o 1.
+    tmpUsers[users.length] = u; // Dodajemy obiekt na ostatniej pozycji.
+    return tmpUsers; // Zwracamy nową tablicę.
+}
+
     public void delete(int userId) {
         try (Connection conn = DbUtil.getConnection(); PreparedStatement preStat = conn.prepareStatement(DELETE_USER_QUERY)) {
             preStat.setInt(1, userId);
