@@ -57,9 +57,17 @@ public class UserDao {
             return null;
         }
     }
-//    public void update(User user) {
-//
-//    }
+    public void update(User user) {
+        try (Connection conn = DbUtil.getConnection(); PreparedStatement preStat = conn.prepareStatement(UPDATE_USER_QUERY)) {
+            preStat.setString(1, user.getUserName());
+            preStat.setString(2, user.getEmail());
+            preStat.setString(3, hashPassword(user.getPassword()));
+            preStat.setInt(4, user.getId());
+            preStat.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 //    public User[] findAll() {
 //
 //    }

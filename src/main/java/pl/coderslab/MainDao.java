@@ -25,11 +25,21 @@ public class MainDao {
 //        user2.setPassword("contin56rt");
 //        userDao.create(user2);
 
-        User userToUpdate = userDao.read(1);
-//        userToUpdate.setName("Arkadiusz");
+//        User userToUpdate = userDao.read(1);
+//        System.out.println(userToUpdate.getId());
+//        System.out.println(userToUpdate.getUserName());
+//        System.out.println(userToUpdate.getEmail());
+//        System.out.println(userToUpdate.getPassword());
+//        userToUpdate.setUserName("Arkadiusz");
 //        userToUpdate.setEmail("arek@coderslab.pl");
 //        userToUpdate.setPassword("superPassword");
 //        userDao.update(userToUpdate);
+//        userToUpdate = userDao.read(1);
+//        System.out.println(userToUpdate.getId());
+//        System.out.println(userToUpdate.getUserName());
+//        System.out.println(userToUpdate.getEmail());
+//        System.out.println(userToUpdate.getPassword());
+
 //
 //        userDao.delete(1);
 //        User[] all = userDao.findAll();
