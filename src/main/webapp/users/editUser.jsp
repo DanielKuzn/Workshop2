@@ -70,24 +70,19 @@
 <%--                    </div>--%>
 <%--                  </div>--%>
                   <input type="hidden" name="id" value="${user.id}"/>
-
                   <div class="form-group">
-                    Name: <input type="text" class="form-control form-control-user" name="userName" placeholder="${user.userName}">
+                      <label for="userName">User name: </label>
+                      <input value="${user.userName}" name="userName" type="text" class="form-control" id="userName" placeholder="User name">
                   </div>
                   <div class="form-group">
-                    Email: <input type="email" class="form-control form-control-user" name="userEmail" placeholder="${user.email}">
+                      <label for="userEmail">User email: </label>
+                      <input value="${user.email}" name="userEmail" type="email" class="form-control" id="userEmail" placeholder="User email">
                   </div>
-                  <div class="form-group row">
-                    <div class="col-sm-6 mb-3 mb-sm-0">
-                      Password: <input type="password" class="form-control form-control-user" name="userPassword" placeholder="Password">
-                    </div>
-<%--                    <div class="col-sm-6">--%>
-<%--                      <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password">--%>
-<%--                    </div>--%>
+                  <div class="form-group">
+                      <label for="userPassword">Password: </label>
+                      <input name="userPassword" type="password" class="form-control" id="userPassword" placeholder="User password">
                   </div>
-                  <button type="submit" class="btn btn-primary btn-user btn-block">
-                    Save user
-                  </button>
+                  <button type="submit" class="btn btn-primary">Save</button>
                 </form></div></div>
 <%--
               <div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to 57 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="dataTable_previous"><a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="dataTable_next"><a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li></ul></div></div></div>

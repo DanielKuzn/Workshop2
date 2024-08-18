@@ -23,16 +23,13 @@ public class editUser extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String id = req.getParameter("id");
-        String name = req.getParameter("userName");
-        String email = req.getParameter("userEmail");
-        String password = req.getParameter("userPassword");
-        User user = new User(name, email, password);
-        user.setId(Integer.parseInt(id));
+        User user = new User();
+        user.setId(Integer.parseInt(req.getParameter("id")));
+        user.setUserName(req.getParameter("userName"));
+        user.setEmail(req.getParameter("userEmail"));
+        user.setPassword(req.getParameter("userPassword"));
         UserDao userDao = new UserDao();
         userDao.update(user);
-        req.setAttribute("users", userDao.findAll());
-        getServletContext().getRequestDispatcher("/users/list.jsp")
-                .forward(req, resp);
+        resp.sendRedirect(req.getContextPath() + "/user/list");
     }
 }

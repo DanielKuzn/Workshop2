@@ -26,8 +26,6 @@ public class addUser extends HttpServlet {
         User user = new User(name, email, password);
         UserDao userDao = new UserDao();
         userDao.create(user);
-        req.setAttribute("users", userDao.findAll());
-        getServletContext().getRequestDispatcher("/users/list.jsp")
-                .forward(req, resp);
+        resp.sendRedirect(req.getContextPath() + "/user/list");
     }
 }
